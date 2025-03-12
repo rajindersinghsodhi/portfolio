@@ -1,4 +1,5 @@
 'use client'; // If you're using App Router and want to use hooks/events
+import Image from 'next/image';
 
 const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode from parent or context if needed
 
@@ -47,28 +48,58 @@ const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode
           {/* Social Icons */}
           {!darkMode ? (
             <div className="flex items-center gap-10">
-              <a href="https://github.com/rajindersinghsodhi" target="_blank" rel="noopener noreferrer">
-                <img src="/github-icon.png" alt="GitHub" style={{ height: "2.5rem", width: "2.5rem" }} />
+              <a
+                href="https://github.com/rajindersinghsodhi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/github-icon.png"
+                  alt="GitHub"
+                  width={40}    // 2.5rem ≈ 40px
+                  height={40}
+                />
               </a>
+
               <a
                 href="https://www.linkedin.com/in/rajindersinghsodhi/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/linkedin-icon.png" alt="LinkedIn" style={{ height: "2rem", width: "2rem" }} />
+                <Image
+                  src="/linkedin-icon.png"
+                  alt="LinkedIn"
+                  width={32}   // 2rem ≈ 32px
+                  height={32}
+                />
               </a>
             </div>
           ) : (
             <div className="flex items-center gap-10">
-              <a href="https://github.com/rajindersinghsodhi" target="_blank" rel="noopener noreferrer">
-                <img src="/dark-github-icon.png" alt="GitHub Dark" style={{ height: "2.5rem", width: "2.5rem" }} />
+              <a
+                href="https://github.com/rajindersinghsodhi"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/dark-github-icon.png"
+                  alt="GitHub Dark"
+                  width={40}    // 2.5rem ≈ 40px
+                  height={40}
+                />
               </a>
+
               <a
                 href="https://www.linkedin.com/in/rajindersinghsodhi-541744227/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src="/dark-linkedin-icon.png" alt="LinkedIn Dark" style={{ height: "2rem", width: "2rem" }} />
+                <Image
+                  src="/dark-linkedin-icon.png"
+                  alt="LinkedIn Dark"
+                  width={32}    // 2rem ≈ 32px
+                  height={32}
+                />
               </a>
             </div>
           )}

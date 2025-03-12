@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 const Contact = ({darkMode} : {darkMode: boolean}) => {
   return (
@@ -28,13 +29,12 @@ const Contact = ({darkMode} : {darkMode: boolean}) => {
           >
             {/* Email */}
             <div className="flex items-center gap-3">
-              <img
-                src={
-                  !darkMode ? "/email-icon.png" : "/dark-email-icon.png"
-                }
-                alt="email icon"
-                style={{ height: "1.5rem" }}
-              />
+            <Image
+              src={!darkMode ? '/email-icon.png' : '/dark-email-icon.png'}
+              alt="Email Icon"
+              width={24}     // 1.5rem ≈ 24px
+              height={24}
+            />
               <span className={`text-lg ${darkMode ? "text-white" : ""}`}>
                 rajindersodhi181&#64;gmail.com
               </span>
@@ -42,15 +42,12 @@ const Contact = ({darkMode} : {darkMode: boolean}) => {
 
             {/* LinkedIn */}
             <div className="flex items-center gap-3">
-              <img
-                src={
-                  !darkMode
-                    ? "/linkedin-icon.png"
-                    : "/dark-linkedin-icon.png"
-                }
-                alt="linkedin icon"
-                style={{ height: "1.5rem", width: "1.5rem" }}
-              />
+            <Image
+              src={!darkMode ? '/linkedin-icon.png' : '/dark-linkedin-icon.png'}
+              alt="LinkedIn Icon"
+              width={24}  // 1.5rem = 24px
+              height={24}
+            />
               <span className={`text-lg ${darkMode ? "text-white" : ""}`}>
                 rajindersinghsodhi
               </span>
