@@ -1,6 +1,4 @@
 'use client';
-import Image from "next/image";
-import Navbar from "./components/Navbar";
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
@@ -17,43 +15,9 @@ export default function Home() {
   };
   return (
     <div className={`flex flex-col gap-5 ${darkMode ? "bg-black" : ""}`}>
-      <nav
-      className={`flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0  lg:w-full w-11/12 border-b border-gray rounded-3xl m-auto ${
-        darkMode ? 'bg-black text-white' : 'bg-white'
-      }`}
-      aria-label="Global"
-    >
-      {/* Left Section */}
-      <div className="hidden lg:flex lg:flex-1">
-        <a href="#" className="-m-1.5 p-1.5">
-          <span className="text-2xl">Rajinder Singh Sodhi</span>
-        </a>
-      </div>
-
-      {/* Center Section */}
-      <div className="lg:flex flex lg:justify-center justify-evenly items-center lg:gap-x-12 w-full lg:w-6/12">
-        <a
-          href="#about"
-          className={`text-lg leading-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}
-        >
-          About
-        </a>
-        <a
-          href="#skills"
-          className={`text-lg leading-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}
-        >
-          Skills
-        </a>
-        <a
-          href="#projects"
-          className={`text-lg leading-6 ${darkMode ? 'text-white' : 'text-gray-900'}`}
-        >
-          Projects
-        </a>
-
-        {/* Toggle Mode Button */}
-        <div
-          className={`border-2 p-1 rounded-xl cursor-pointer ${
+      <div className="w-full flex justify-between items-center p-5">
+      <div
+          className={`border-2 p-1 rounded-full cursor-pointer p-2 ${
             darkMode ? 'border-neutral-50' : 'border-black'
           }`}
           onClick={toggleMode}
@@ -98,20 +62,17 @@ export default function Home() {
             </svg>
           )}
         </div>
-      </div>
-
-      {/* Right Section */}
-      <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="flex">
         <a
-          href="#contactMe"
-          className={`focus:outline-none font-medium rounded-full text-sm px-5 me-2 mb-2 py-3 ${
+          href="#contact"
+          className={`focus:outline-none font-medium rounded-full text-sm px-5 py-3 ${
             darkMode ? 'bg-white text-black' : 'text-white bg-black'
           }`}
         >
           Contact Me
         </a>
       </div>
-    </nav>
+      </div>
     <div className="flex flex-col gap-20">
       <Intro darkMode={darkMode}/>
       <Experience darkMode={darkMode}/>

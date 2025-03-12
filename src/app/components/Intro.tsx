@@ -5,7 +5,7 @@ const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode
   return (
     <section
       className={`flex flex-col items-center justify-center ${darkMode ? "bg-black" : ""}`}
-      style={{ height: "100vh" }}
+      style={{ height: "80vh" }}
     >
       <div className="flex flex-col lg:flex-row justify-center items-center lg:gap-20 gap-10" id="home-container">
         {/* Image Container */}
