@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from "react";
-
+import React from "react";
+import Image from 'next/image';
 const Experience = ({darkMode} : {darkMode: boolean}) => {// example toggle, handle as needed
   return (
     <section
@@ -38,16 +38,22 @@ const Experience = ({darkMode} : {darkMode: boolean}) => {// example toggle, han
           }`}
         >
           <div className="flex items-center gap-2 my-2 lg:m-0">
-            {!darkMode ? (
-              <img src="experience-icon.png" alt="experience" style={{ height: "1.5rem" }} />
-            ) : (
-              <img
-                src="dark-experience-icon.png"
-                alt="dark experience"
-                style={{ height: "2rem" }}
-                className="px-2"
-              />
-            )}
+          {!darkMode ? (
+            <Image
+              src="/experience-icon.png"
+              alt="Experience Icon"
+              width={24} // 1.5rem = 24px
+              height={24}
+            />
+          ) : (
+            <Image
+              src="/dark-experience-icon.png"
+              alt="Dark Experience Icon"
+              width={32} // 2rem = 32px
+              height={32}
+              className="px-2"
+            />
+          )}
             <h1 className={`text-xl font-bold ${darkMode ? "text-white" : ""}`}>
               Work Experience
             </h1>
@@ -101,21 +107,23 @@ const Experience = ({darkMode} : {darkMode: boolean}) => {// example toggle, han
           }`}
         >
           <div className="flex items-center">
-            {!darkMode ? (
-              <img
-                src="education-icon.png"
-                alt="education"
-                style={{ height: "2rem" }}
-                className="px-2"
-              />
-            ) : (
-              <img
-                src="dark-education-icon.png"
-                alt="dark education"
-                style={{ height: "2rem" }}
-                className="px-2"
-              />
-            )}
+          {!darkMode ? (
+            <Image
+              src="/education-icon.png" // make sure this is inside the /public directory
+              alt="Education Icon"
+              width={32}  // 2rem = 32px
+              height={32}
+              className="px-2"
+            />
+          ) : (
+            <Image
+              src="/dark-education-icon.png"
+              alt="Dark Education Icon"
+              width={32}
+              height={32}
+              className="px-2"
+            />
+          )}
             <h1 className={`text-xl font-bold ${darkMode ? "text-white" : ""}`}>
               Education
             </h1>
