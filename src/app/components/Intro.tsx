@@ -13,7 +13,7 @@ const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode
           <img
             src="/rajinder_image.jpeg"
             alt="Rajinder Singh Sodhi"
-            className={`rounded-full border-2 border-black h-60 w-60 ${darkMode ? "border-4 border-neutral-100" : ""}`}
+            className={`rounded-full border-2 border-black h-40 w-40 md:h-60 md:w-60 ${darkMode ? "border-4 border-neutral-100" : ""}`}
             id="logo"
           />
         </div>
@@ -51,7 +51,7 @@ const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode
                 <img src="/github-icon.png" alt="GitHub" style={{ height: "2.5rem", width: "2.5rem" }} />
               </a>
               <a
-                href="https://www.linkedin.com/in/rajindersinghsodhi-541744227/"
+                href="https://www.linkedin.com/in/rajindersinghsodhi/"
                 target="_blank"
                 rel="noopener noreferrer"
               >

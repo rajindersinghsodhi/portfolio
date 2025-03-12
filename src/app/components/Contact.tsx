@@ -4,7 +4,7 @@ const Contact = ({darkMode} : {darkMode: boolean}) => {
   return (
     <section id="Contact" className={`${darkMode ? "bg-black" : ""}`}>
       <div
-        className="flex flex-col justify-evenly items-center py-5"
+        className="flex flex-col justify-evenly items-center py-5 md:gap-10"
         id="contact-container"
       >
         <div className="flex flex-col items-center justify-center mt-20 mb-10 lg:m-0">

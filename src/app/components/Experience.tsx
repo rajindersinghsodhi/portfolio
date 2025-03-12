@@ -5,7 +5,7 @@ const Experience = ({darkMode} : {darkMode: boolean}) => {// example toggle, han
   return (
     <section
       id="about"
-      className={`flex flex-col justify-evenly items-center ${
+      className={`flex flex-col justify-evenly items-center md:gap-10 ${
         darkMode ? "bg-black" : ""
       }`}
     >

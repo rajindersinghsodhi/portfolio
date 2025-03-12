@@ -3,7 +3,7 @@ import React from 'react';
 const Skills = ({darkMode} : {darkMode: boolean}) => {
   return (
     <section id="skills" className={darkMode ? 'bg-black' : ''}>
-      <div className="flex flex-col justify-evenly items-center" id="skills-container">
+      <div className="flex flex-col justify-evenly items-center md:gap-10" id="skills-container">
         <div className="flex justify-center mt-20 mb-5 lg:m-0">
           <h1 className={`text-5xl font-semibold ${darkMode ? 'text-white' : ''}`}>
             Skills
