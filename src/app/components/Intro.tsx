@@ -1,8 +1,6 @@
 'use client'; // If you're using App Router and want to use hooks/events
-import { useState } from "react";
 
-const Intro = () => {
-  const [darkMode, setDarkMode] = useState(false); // You can control darkMode from parent or context if needed
+const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode from parent or context if needed
 
   return (
     <section

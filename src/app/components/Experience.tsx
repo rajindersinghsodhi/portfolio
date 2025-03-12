@@ -1,9 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-const Experience = () => {
-  const [darkMode, setDarkMode] = useState(false); // example toggle, handle as needed
-
+const Experience = ({darkMode} : {darkMode: boolean}) => {// example toggle, handle as needed
   return (
     <section
       id="about"
