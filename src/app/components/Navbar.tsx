@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`flex items-center justify-between lg:p-3 lg:px-8 py-5 fixed top-0 left-5 lg:left-0 lg:w-full w-11/12 border-b border-gray rounded-3xl m-auto ${
+      className={`flex items-center justify-between lg:p-3 lg:px-8 py-5 lg:w-full w-11/12 border-b border-gray rounded-3xl m-auto ${
         darkMode ? 'bg-black text-white' : 'bg-white'
       }`}
       aria-label="Global"
