@@ -5,6 +5,7 @@ import Intro from "./components/Intro";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Experience from "./components/Experience";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,6 +36,7 @@ export default function RootLayout({
         <div className="flex flex-col gap-20">
         <Intro/>
         <Skills/>
+        <Experience/>
         <Projects/>
         <Contact/>
         </div>
