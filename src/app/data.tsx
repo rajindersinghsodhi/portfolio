@@ -1,5 +1,5 @@
 const resume_data = {
-    tech_skills: [
+    categories: [
         {
             title: 'Frontend',
             skills: [
@@ -39,10 +39,49 @@ const resume_data = {
                 {
                     img_url: 'expressjs.png',
                     title: 'Expressjs'
+                }
+            ]
+        },
+        {
+            title: 'Tools',
+            skills: [
+                {
+                    img_url: 'docker.png',
+                    title: 'Docker'
+                },
+            ]
+        },
+        {
+            title: 'Cloud',
+            skills: [
+                {
+                    img_url: 'azure.png',
+                    title: 'Azure'
                 },
                 {
                     img_url: 'firebase.png',
                     title: 'Firebase'
+                }
+            ]
+        },
+        {
+            title: 'Languages',
+            skills: [
+                {
+                    img_url: 'java.png',
+                    title: 'Java'
+                },
+                {
+                    img_url: 'Javascript.jfif',
+                    title: 'Javascript'
+                },
+                {
+                    img_url: 'typescript.png',
+                    title: 'Typescript'
+                },
+                {
+                    img_url: 'python.png',
+                    title: 'Python'
                 }
             ]
         }
