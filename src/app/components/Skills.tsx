@@ -6,7 +6,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@/aceternityComponents/ui/carousel";
 
 const Skills = () => {
   return (

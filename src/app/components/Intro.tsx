@@ -1,7 +1,20 @@
 // 'use client'; 
+import { TypewriterEffect } from '@/aceternityComponents/ui/typewriter-effect';
 import Image from 'next/image';
 
 const Intro = () => {// You can control darkMode from parent or context if needed
+  
+  const words = [
+    {
+      text: "Rajinder",
+    },
+    {
+      text: "Singh",
+    },
+    {
+      text: "Sodhi",
+    },
+  ];
   const darkMode = false;
   return (
     <section
@@ -23,10 +36,12 @@ const Intro = () => {// You can control darkMode from parent or context if neede
         <div className="flex flex-col items-center gap-7">
           <div className="flex flex-col items-center gap-2">
             <span className={`lg:text-lg ${darkMode ? "text-white" : ""}`}>Hello, I am</span>
-            <span className={`lg:text-4xl font-semibold lg:font-normal ${darkMode ? "text-white" : ""}`}>
+            {/* <span className={`lg:text-4xl font-semibold lg:font-normal ${darkMode ? "text-white" : ""}`}>
               Rajinder Singh Sodhi
-            </span>
-            <span className="lg:text-2xl font-bold" style={{ color: "rgb(114, 111, 111)" }}>
+            </span> */}
+            
+            <TypewriterEffect words={words} />
+            <span className="lg:text-2xl font-semibold" style={{ color: "rgb(114, 111, 111)" }}>
               Software Engineer
             </span>
           </div>

@@ -33,7 +33,7 @@ const resume_data = {
                     title: 'Nodejs'
                 },
                 {
-                    img_url: 'mongodb.png',
+                    img_url: 'mongo.png',
                     title: 'MongoDB'
                 },
                 {
@@ -49,6 +49,18 @@ const resume_data = {
                     img_url: 'docker.png',
                     title: 'Docker'
                 },
+                {
+                    img_url: 'postman.png',
+                    title: 'Postman'
+                },
+                {
+                    img_url: 'git.png',
+                    title: 'Git'
+                },
+                {
+                    img_url: 'vscode.png',
+                    title: 'VS Code'
+                }
             ]
         },
         {
@@ -72,7 +84,7 @@ const resume_data = {
                     title: 'Java'
                 },
                 {
-                    img_url: 'Javascript.jfif',
+                    img_url: 'javascript.png',
                     title: 'Javascript'
                 },
                 {
@@ -88,18 +100,38 @@ const resume_data = {
     ],
     projects: [
         {
-            img_url: ['pragyan_1.png', 'pragyan_2.png', 'pragyan_3.png', ],
+            img_url: ['pragyan_4.png', 'pragyan_1.png', 'pragyan_2.png', 'pragyan_3.png', ],
             title: 'Pragyan AI',
             tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
             link: 'https://competition.pragyan.humanli.ai/login'
         },
         {
-            img_url: ['dod_1.png', 'dod_2.png', 'dod_3.png', ],
+            img_url: ['dod_4.png', 'dod_1.png', 'dod_2.png', 'dod_3.png', ],
             title: 'Data on Demand',
             tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
             link: 'https://dod.humanli.ai/login'
         }
-    ]
+    ],
+    experience: {
+        technologies: [
+            "Angular",
+            "React.js",
+            "Next.js",
+            "Tailwind CSS",
+            "Angular Material UI",
+            "RxJS",
+            "REST APIs",
+            "MathJax",
+            "Markdown",
+            "Razorpay",
+            "Flask",
+            "Firebase",
+            "Docker",
+            "Azure",
+            "CI/CD Pipelines",
+            "Twilio",
+        ]
+    }
 }
 
 export default resume_data;
