@@ -1,8 +1,8 @@
-'use client'; // If you're using App Router and want to use hooks/events
+// 'use client'; 
 import Image from 'next/image';
 
-const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode from parent or context if needed
-
+const Intro = () => {// You can control darkMode from parent or context if needed
+  const darkMode = false;
   return (
     <section
       className={`flex flex-col items-center justify-center ${darkMode ? "bg-black" : ""}`}
@@ -12,7 +12,7 @@ const Intro = ({darkMode} : {darkMode: boolean}) => {// You can control darkMode
         {/* Image Container */}
         <div className="flex justify-center">
           <img
-            src="/rajinder_image.jpeg"
+            src="/profile.jpeg"
             alt="Rajinder Singh Sodhi"
             className={`rounded-full border-2 border-black h-40 w-40 md:h-60 md:w-60 ${darkMode ? "border-4 border-neutral-100" : ""}`}
             id="logo"

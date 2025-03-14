@@ -1,83 +1,48 @@
-import React from 'react';
+import React from "react";
+import resume_data from "../data";
 
-const Skills = ({darkMode} : {darkMode: boolean}) => {
+const Skills = () => {
   return (
-    <section id="skills" className={darkMode ? 'bg-black' : ''}>
-      <div className="flex flex-col justify-evenly items-center md:gap-10" id="skills-container">
-        <div className="flex justify-center mt-20 mb-5 lg:m-0">
-          <h1 className={`text-5xl font-semibold ${darkMode ? 'text-white' : ''}`}>
-            Skills
-          </h1>
-        </div>
+    <section className="flex flex-col px-4 md:px-8 py-8 gap-10 bg-gradient-to-b from-white to-slate-50">
+      <div className="flex w-full justify-center">
+        <h2 className="font-bold text-3xl md:text-4xl text-slate-800 tracking-wide pb-2">
+          Skills
+        </h2>
+      </div>
 
-        <div className="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {resume_data.tech_skills.map((tech_skill, index) => (
+          <div
+            key={index}
+            className="flex flex-col flex-1 border border-slate-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow bg-white"
+          >
+            <div className="flex justify-center mb-4">
+              <span className="font-semibold text-xl md:text-2xl">
+                {tech_skill.title}
+              </span>
+            </div>
 
-          {/* Frontend Development */}
-          <div className={`flex flex-col items-center border rounded-3xl p-5 lg:w-1/3 w-11/12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-            <h1 className={`text-xl ${darkMode ? 'text-white' : ''}`}>
-              Frontend Development
-            </h1>
-            <div className="flex flex-col items-center">
-              <div className="flex flex-wrap gap-3 p-5">
-                {['HTML', 'CSS', 'Angular', 'Reactjs', 'Bootstrap', 'Tailwind CSS', 'Gen Ai'].map((skill, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'
-                    }`}
-                  >
-                    {skill}
-                  </p>
-                ))}
-              </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+              {tech_skill.skills.map((skill, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col justify-center items-center gap-2 border border-slate-100 rounded-xl p-4 bg-slate-50 hover:bg-white hover:scale-105 transition-all duration-300"
+                >
+                  <div className="h-12 w-12 flex justify-center items-center">
+                    <img
+                      src={skill.img_url}
+                      alt={skill.title}
+                      className="h-12 w-12 object-contain rounded"
+                    />
+                  </div>
+                  <span className="text-sm font-medium text-slate-700 text-center">
+                    {skill.title}
+                  </span>
+                </div>
+              ))}
             </div>
           </div>
-
-          {/* Backend Development */}
-          <div className={`flex flex-col items-center border rounded-3xl p-5 lg:w-1/3 w-11/12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-            <h1 className={`text-xl ${darkMode ? 'text-white' : ''}`}>
-              Backend Development
-            </h1>
-            <div className="flex flex-col items-center">
-              <div className="flex flex-wrap gap-3 p-5">
-                {['Python', 'Flask', 'Express', "REST API's", 'Git', 'Firebase', 'MongoDB'].map((skill, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'
-                    }`}
-                  >
-                    {skill}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Programming Languages */}
-          <div className={`flex flex-col border rounded-3xl p-5 lg:w-1/3 w-11/12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-            <div className="flex justify-center">
-              <h1 className={`text-xl ${darkMode ? 'text-white' : ''}`}>
-                Programming Languages
-              </h1>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="flex flex-wrap gap-3 p-5">
-                {['Java', 'JavaScript', 'Typescript', 'Python', 'Data Structures & Algorithms'].map((lang, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'
-                    }`}
-                  >
-                    {lang}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-
-        </div>
+        ))}
       </div>
     </section>
   );

@@ -8,11 +8,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleMode = () => {
-    setDarkMode(!darkMode);
-  };
+  const darkMode = false
   return (
     <div className={`flex flex-col gap-5 ${darkMode ? "bg-black" : ""}`}>
       <div className="w-full flex justify-between items-center p-5">
@@ -20,7 +16,7 @@ export default function Home() {
           className={`border-2 p-1 rounded-full cursor-pointer p-2 ${
             darkMode ? 'border-neutral-50' : 'border-black'
           }`}
-          onClick={toggleMode}
+          // onClick={toggleMode}
         >
           {darkMode ? (
             // Dark Mode Icon
@@ -74,12 +70,8 @@ export default function Home() {
       </div>
       </div>
     <div className="flex flex-col gap-20">
-      <Intro darkMode={darkMode}/>
-      <Experience darkMode={darkMode}/>
-      <Skills darkMode={darkMode}/>
-      <Projects darkMode={darkMode}/>
-      <Contact darkMode={darkMode}/>
-      <Footer darkMode={darkMode}/>
+      <Intro/>
+      <Skills/>
     </div>
     </div>
   );
