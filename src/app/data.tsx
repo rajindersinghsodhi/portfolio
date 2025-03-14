@@ -85,6 +85,20 @@ const resume_data = {
                 }
             ]
         }
+    ],
+    projects: [
+        {
+            img_url: ['pragyan_1.png', 'pragyan_2.png', 'pragyan_3.png', ],
+            title: 'Pragyan AI',
+            tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
+            link: 'https://competition.pragyan.humanli.ai/login'
+        },
+        {
+            img_url: ['dod_1.png', 'dod_2.png', 'dod_3.png', ],
+            title: 'Data on Demand',
+            tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
+            link: 'https://dod.humanli.ai/login'
+        }
     ]
 }
 

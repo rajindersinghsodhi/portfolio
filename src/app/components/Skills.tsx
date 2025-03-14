@@ -10,22 +10,22 @@ import {
 
 const Skills = () => {
   return (
-    <section className="flex flex-col items-center px-4 md:px-8 py-8 gap-5 md:gap-10 bg-gradient-to-b from-white to-slate-50">
+    <section className="flex flex-col items-center px-4 md:px-8 py-8 gap-5 md:gap-10">
       <div className="flex w-full justify-center">
         <h2 className="font-bold text-3xl md:text-4xl text-slate-800 tracking-wide pb-2">
           Skills
         </h2>
       </div>
 
-      <div className="w-11/12">
+      <div className="w-9/12 md:w-11/12">
         <Carousel className="w-full">
           <CarouselContent>
             {resume_data.categories.map((category, index) => (
               <CarouselItem
                 key={index}
-                className="flex justify-center px-4 md:px-10"
+                className="flex justify-center"
               >
-                <div className="flex flex-col flex-1 border border-slate-200 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow bg-white w-full">
+                <div className="flex flex-col flex-1 border border-slate-200 rounded-2xl p-6 transition-shadow bg-white w-full">
                   {/* Category Title */}
                   <div className="flex justify-center mb-4">
                     <span className="font-semibold text-xl md:text-2xl">

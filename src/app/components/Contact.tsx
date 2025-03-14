@@ -1,7 +1,8 @@
 import React from "react";
 import Image from 'next/image';
 
-const Contact = ({darkMode} : {darkMode: boolean}) => {
+const Contact = () => {
+  const darkMode = false;
   return (
     <section id="contact" className={`${darkMode ? "bg-black" : ""}`}>
       <div
@@ -13,7 +14,7 @@ const Contact = ({darkMode} : {darkMode: boolean}) => {
             Get in Touch
           </span>
           <h1
-            className={`text-5xl font-semibold ${
+            className={`text-3xl md:text-4xl font-bold ${
               darkMode ? "text-white" : ""
             }`}
           >

@@ -69,10 +69,6 @@ export default function Home() {
         </a>
       </div>
       </div>
-    <div className="flex flex-col gap-20">
-      <Intro/>
-      <Skills/>
-    </div>
     </div>
   );
 }
