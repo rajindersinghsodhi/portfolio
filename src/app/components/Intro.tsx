@@ -1,4 +1,3 @@
-'use client';
 import { TypewriterEffect } from '@/aceternityComponents/ui/typewriter-effect';
 import Image from 'next/image';
 
