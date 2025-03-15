@@ -2,28 +2,50 @@
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [dark, setDark] = useState<boolean | null>(null);
+  useEffect(() => {
+    const storedDarkMode = localStorage.getItem('darkMode');
+    const isDark = storedDarkMode ? JSON.parse(storedDarkMode) : true;
+    setDark(isDark);
+  }, []);
 
-  const toggleMode = () => {
-    setDarkMode(!darkMode);
+  const toggleDark = () => {
+    if (dark === null) return; 
+    const newDark = !dark;
+    setDark(newDark);
+    localStorage.setItem('darkMode', JSON.stringify(newDark));
   };
+  if (dark === null) {
+    return null;
+  }
   return (
-    <div className={`flex flex-col gap-5 ${darkMode ? "bg-black" : ""}`}>
+    <div
+      className="flex flex-col gap-5 transition-colors duration-300"
+      style={{
+        backgroundColor: dark ? "#121212" : "#FFFFFF",
+        color: dark ? "#F5F5F5" : "#121212",
+      }}
+    >
+      {/* Header */}
       <div className="w-full flex justify-between items-center p-5">
-      <div
-          className={`border-2 p-1 rounded-full cursor-pointer p-2 ${
-            darkMode ? 'border-neutral-50' : 'border-black'
+        
+        {/* Dark/Light Toggle Icon */}
+        <div
+          className={`border-2 rounded-full cursor-pointer p-2 transition-all duration-300 ${
+            dark
+              ? 'border-[#F5F5F5] bg-[#1A1A1A] text-[#F5F5F5]'
+              : 'border-[#121212] bg-[#FFFFFF] text-[#121212]'
           }`}
-          onClick={toggleMode}
+          onClick={toggleDark}
         >
-          {darkMode ? (
-            // Dark Mode Icon
+          {dark ? (
+            // Dark Mode Icon (Moon)
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="white"
@@ -41,7 +63,7 @@ export default function Home() {
               />
             </svg>
           ) : (
-            // Light Mode Icon
+            // Light Mode Icon (Sun)
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -62,25 +84,28 @@ export default function Home() {
             </svg>
           )}
         </div>
+
+        {/* Contact Me Button */}
         <div className="flex">
-        <a
-          href="#contact"
-          className={`focus:outline-none font-medium rounded-full text-sm px-5 py-3 ${
-            darkMode ? 'bg-white text-black' : 'text-white bg-black'
-          }`}
-        >
-          Contact Me
-        </a>
+          <a
+            href="#contact"
+            className={`focus:outline-none font-medium rounded-full text-sm px-5 py-3 transition-all duration-300 ${
+              dark
+                ? 'bg-[#F5F5F5] text-[#121212] hover:bg-[#E0E0E0]'
+                : 'bg-[#121212] text-[#FFFFFF] hover:bg-[#1A1A1A]'
+            }`}
+          >
+            Contact Me
+          </a>
+        </div>
       </div>
-      </div>
-    <div className="flex flex-col gap-20">
-      <Intro darkMode={darkMode}/>
-      <Experience darkMode={darkMode}/>
-      <Skills darkMode={darkMode}/>
-      <Projects darkMode={darkMode}/>
-      <Contact darkMode={darkMode}/>
-      <Footer darkMode={darkMode}/>
-    </div>
+      <div className="flex flex-col gap-20">
+        <Intro darkMode={dark}/>
+        <Skills darkMode={dark}/>
+        <Experience darkMode={dark}/>
+        <Projects darkMode={dark}/>
+        <Contact darkMode={dark}/>
+        </div>
     </div>
   );
 }

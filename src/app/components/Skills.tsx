@@ -1,83 +1,130 @@
-import React from 'react';
+import React from "react";
+import resume_data from "../data";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/aceternityComponents/ui/carousel";
 
-const Skills = ({darkMode} : {darkMode: boolean}) => {
+const Skills = ({ darkMode }: { darkMode: boolean }) => {
   return (
-    <section id="skills" className={darkMode ? 'bg-black' : ''}>
-      <div className="flex flex-col justify-evenly items-center md:gap-10" id="skills-container">
-        <div className="flex justify-center mt-20 mb-5 lg:m-0">
-          <h1 className={`text-5xl font-semibold ${darkMode ? 'text-white' : ''}`}>
-            Skills
-          </h1>
-        </div>
+    <section
+      className="flex flex-col items-center px-4 md:px-8 py-8 gap-5 md:gap-10 transition-colors duration-300"
+      style={{
+        backgroundColor: darkMode ? "#121212" : "#FFFFFF",
+        color: darkMode ? "#F5F5F5" : "#121212",
+      }}
+    >
+      {/* Title */}
+      <div className="flex w-full justify-center">
+        <h2
+          className={`font-bold text-3xl md:text-4xl tracking-wide pb-2 transition-colors duration-300`}
+          style={{
+            color: darkMode ? "#F5F5F5" : "#121212",
+          }}
+        >
+          Skills
+        </h2>
+      </div>
 
-        <div className="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
+      {/* Carousel */}
+      <div className="w-9/12 md:w-11/12">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {resume_data.categories.map((category, index) => (
+              <CarouselItem
+                key={index}
+                className={`flex justify-center transition-colors duration-300`}
+                style={{
+                  backgroundColor: darkMode ? "#1A1A1A" : "#F9FAFB",
+                  color: darkMode ? "#F5F5F5" : "#121212",
+                  borderRadius: "1rem",
+                }}
+              >
+                <div
+                  className="flex flex-col flex-1 rounded-2xl p-6 w-full transition-all duration-300 shadow-md"
+                  style={{
+                    border: `1px solid ${darkMode ? "#2C2C2C" : "#E5E7EB"}`, // dark/light border
+                    backgroundColor: darkMode ? "#1A1A1A" : "#FFFFFF",
+                  }}
+                >
+                  {/* Category Title */}
+                  <div className="flex justify-center mb-4">
+                    <span
+                      className="font-semibold text-xl md:text-2xl transition-colors duration-300"
+                      style={{
+                        color: darkMode ? "#F5F5F5" : "#121212",
+                      }}
+                    >
+                      {category.title}
+                    </span>
+                  </div>
 
-          {/* Frontend Development */}
-          <div className={`flex flex-col items-center border rounded-3xl p-5 lg:w-1/3 w-11/12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-            <h1 className={`text-xl ${darkMode ? 'text-white' : ''}`}>
-              Frontend Development
-            </h1>
-            <div className="flex flex-col items-center">
-              <div className="flex flex-wrap gap-3 p-5">
-                {['HTML', 'CSS', 'Angular', 'Reactjs', 'Bootstrap', 'Tailwind CSS', 'Gen Ai'].map((skill, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'
-                    }`}
-                  >
-                    {skill}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
+                  {/* Skills Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+                    {category.skills.map((skill, idx) => (
+                      <div
+                        key={idx}
+                        className="flex flex-col justify-center items-center gap-2 rounded-xl p-4 transition-all duration-300 hover:scale-105"
+                        style={{
+                          backgroundColor: darkMode ? "#2C2C2C" : "#F9FAFB",
+                          border: `1px solid ${darkMode ? "#3A3A3A" : "#E5E7EB"}`,
+                          color: darkMode ? "#C0C0C0" : "#374151",
+                        }}
+                      >
+                        <div className="h-8 w-8 flex justify-center items-center">
+                          <img
+                            src={skill.img_url}
+                            alt={skill.title}
+                            className="h-8 w-8 object-contain rounded"
+                          />
+                        </div>
+                        <span
+                          className="text-sm font-medium text-center"
+                          style={{
+                            color: darkMode ? "#C0C0C0" : "#374151",
+                          }}
+                        >
+                          {skill.title}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
 
-          {/* Backend Development */}
-          <div className={`flex flex-col items-center border rounded-3xl p-5 lg:w-1/3 w-11/12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-            <h1 className={`text-xl ${darkMode ? 'text-white' : ''}`}>
-              Backend Development
-            </h1>
-            <div className="flex flex-col items-center">
-              <div className="flex flex-wrap gap-3 p-5">
-                {['Python', 'Flask', 'Express', "REST API's", 'Git', 'Firebase', 'MongoDB'].map((skill, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'
-                    }`}
-                  >
-                    {skill}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Carousel Controls */}
+          <CarouselPrevious
+  className={`rounded-full p-2 transition-all duration-300 border ${
+    darkMode
+      ? 'bg-[#1A1A1A] text-[#F5F5F5] border-[#2C2C2C] hover:bg-[#2C2C2C]'
+      : 'bg-white text-[#121212] border-[#E5E7EB] hover:bg-gray-100'
+  }`}
+/>
+          <CarouselNext
+  className={`rounded-full p-2 transition-all duration-300 border ${
+    darkMode
+      ? 'bg-[#1A1A1A] text-[#F5F5F5] border-[#2C2C2C] hover:bg-[#2C2C2C]'
+      : 'bg-white text-[#121212] border-[#E5E7EB] hover:bg-gray-100'
+  }`}
+/>
+        </Carousel>
+      </div>
 
-          {/* Programming Languages */}
-          <div className={`flex flex-col border rounded-3xl p-5 lg:w-1/3 w-11/12 ${darkMode ? 'bg-black' : 'bg-white'}`}>
-            <div className="flex justify-center">
-              <h1 className={`text-xl ${darkMode ? 'text-white' : ''}`}>
-                Programming Languages
-              </h1>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="flex flex-wrap gap-3 p-5">
-                {['Java', 'JavaScript', 'Typescript', 'Python', 'Data Structures & Algorithms'].map((lang, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode ? 'bg-white text-black' : 'bg-slate-950 text-white'
-                    }`}
-                  >
-                    {lang}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-
-        </div>
+      {/* Footer Note */}
+      <div className="flex justify-center w-full">
+        <span
+          className="text-sm transition-colors duration-300"
+          style={{
+            color: darkMode ? "#C0C0C0" : "#6B7280",
+          }}
+        >
+          Use arrows to navigate
+        </span>
       </div>
     </section>
   );

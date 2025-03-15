@@ -1,172 +1,152 @@
-"use client";
 import React from "react";
-import Image from 'next/image';
-const Experience = ({darkMode} : {darkMode: boolean}) => {// example toggle, handle as needed
+import Image from "next/image";
+import resume_data from "../data";
+
+const Experience = ({ darkMode }: { darkMode: boolean }) => {
   return (
     <section
-      id="about"
-      className={`flex flex-col justify-evenly items-center md:gap-10 ${
-        darkMode ? "bg-black" : ""
-      }`}
+      id="experience"
+      className={`flex flex-col justify-evenly items-center px-4 md:px-10 py-16 transition-colors duration-300`}
+      style={{
+        backgroundColor: darkMode ? "#121212" : "#FFFFFF",
+        color: darkMode ? "#F5F5F5" : "#121212",
+      }}
     >
-      {/* About Heading */}
-      <div className="flex justify-center mt-20 mb-10 lg:m-0">
-        <h1 className={`text-5xl font-semibold ${darkMode ? "text-white" : ""}`}>
-          About
+      {/* Heading */}
+      <div className="flex justify-center mb-10">
+        <h1
+          className="text-3xl md:text-4xl font-bold tracking-wide"
+          style={{
+            color: darkMode ? "#F5F5F5" : "#121212",
+          }}
+        >
+          Experience
         </h1>
       </div>
 
-      {/* About Description */}
-      <div className="hidden lg:flex justify-start" style={{ width: "55vw" }}>
-        <p className={`flex text-justify ${darkMode ? "text-white" : ""}`}>
-          Full Stack Developer with 1 year of experience in Angular, Flask,
-          Firebase, and Tailwind CSS. Skilled in developing REST APIs, designing
-          dynamic user interfaces, and implementing efficient authentication
-          systems. Proficient in integrating tools and technologies such as
-          Razorpay, MathJax, and real-time databases. Strong expertise in frontend
-          and backend development, with a focus on creating scalable and
-          maintainable web solutions.
+      {/* Intro Description */}
+      <div className="max-w-4xl text-center mb-12">
+        <p
+          className="text-lg md:text-xl font-medium leading-relaxed"
+          style={{
+            color: darkMode ? "#C0C0C0" : "#374151",
+          }}
+        >
+          Software Engineer with 1 year of experience. Currently working as Full
+          Stack Developer at Humanli.ai.
         </p>
       </div>
 
-      {/* Experience and Education Cards */}
-      <div className="flex lg:flex-row flex-col justify-evenly lg:items-stretch items-center gap-10 mx-3">
-        {/* Work Experience Card */}
+      {/* Work Experience Card */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+        {/* Left Section: Role + Company */}
         <div
-          className={`flex flex-col items-center border rounded-3xl p-5 lg:w-1/2 w-11/12 ${
-            darkMode ? "bg-black" : "bg-white"
-          }`}
+          className="rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
+          style={{
+            backgroundColor: darkMode ? "#1A1A1A" : "#FFFFFF",
+            border: `1px solid ${darkMode ? "#2C2C2C" : "#E5E7EB"}`,
+            color: darkMode ? "#F5F5F5" : "#121212",
+          }}
         >
-          <div className="flex items-center gap-2 my-2 lg:m-0">
-          {!darkMode ? (
-            <Image
-              src="/experience-icon.png"
-              alt="Experience Icon"
-              width={24} // 1.5rem = 24px
-              height={24}
-            />
-          ) : (
-            <Image
-              src="/dark-experience-icon.png"
-              alt="Dark Experience Icon"
-              width={32} // 2rem = 32px
-              height={32}
-              className="px-2"
-            />
-          )}
-            <h1 className={`text-xl font-bold ${darkMode ? "text-white" : ""}`}>
-              Work Experience
-            </h1>
-          </div>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-2">
+            Full Stack Developer
+          </h2>
 
-          <div className="w-full flex flex-col justify-center items-center" style={{ height: "100%" }}>
-            <div className="flex flex-col w-full">
-              <div className="flex justify-between items-center">
-                <span className={`lg:text-lg ${darkMode ? "text-white" : ""}`}>
-                  Humanli.ai
-                </span>
-                <span className={`ms-10 text-sm ${darkMode ? "text-white" : ""}`}>
-                  15 April, 2024 - Present
-                </span>
-              </div>
+          <p
+            className="text-md mb-4"
+            style={{
+              color: darkMode ? "#C0C0C0" : "#6B7280",
+            }}
+          >
+            Humanli.ai – Jaipur, Rajasthan
+          </p>
 
-              <div className="flex flex-wrap gap-3 p-5">
-                {[
-                  "Angular",
-                  "Tailwind CSS",
-                  "Angular Material UI",
-                  "Rxjs",
-                  "Flask",
-                  "Firebase",
-                  "REST APIs",
-                  "MathJax",
-                  "Razorpay",
-                  "Gen Ai",
-                  "GCP",
-                ].map((tech, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode
-                        ? "bg-white text-black"
-                        : "text-white bg-slate-950"
-                    }`}
-                  >
-                    {tech}
-                  </p>
-                ))}
-              </div>
+          <p
+            className="text-sm"
+            style={{
+              color: darkMode ? "#A0A0A0" : "#9CA3AF",
+            }}
+          >
+            April 2024 - Present
+          </p>
+
+          {/* Technologies */}
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold mb-4">Technologies Used</h3>
+
+            <div className="flex flex-wrap gap-2 text-sm md:text-base">
+              {resume_data.experience.technologies.map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 rounded-md transition-all duration-300 cursor-default"
+                  style={{
+                    backgroundColor: darkMode ? "#2C2C2C" : "#F9FAFB",
+                    color: darkMode ? "#C0C0C0" : "#374151",
+                    border: `1px solid ${darkMode ? "#3A3A3A" : "#E5E7EB"}`,
+                  }}
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Education Card */}
+        {/* Right Section: Responsibilities */}
         <div
-          className={`flex flex-col items-center border rounded-3xl p-5 lg:w-1/2 w-11/12 ${
-            darkMode ? "bg-black" : "bg-white"
-          }`}
+          className="rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6"
+          style={{
+            backgroundColor: darkMode ? "#1A1A1A" : "#FFFFFF",
+            border: `1px solid ${darkMode ? "#2C2C2C" : "#E5E7EB"}`,
+            color: darkMode ? "#F5F5F5" : "#121212",
+          }}
         >
-          <div className="flex items-center">
-          {!darkMode ? (
-            <Image
-              src="/education-icon.png" // make sure this is inside the /public directory
-              alt="Education Icon"
-              width={32}  // 2rem = 32px
-              height={32}
-              className="px-2"
-            />
-          ) : (
-            <Image
-              src="/dark-education-icon.png"
-              alt="Dark Education Icon"
-              width={32}
-              height={32}
-              className="px-2"
-            />
-          )}
-            <h1 className={`text-xl font-bold ${darkMode ? "text-white" : ""}`}>
-              Education
-            </h1>
-          </div>
+          <h3 className="text-xl font-semibold mb-4">Key Responsibilities</h3>
 
-          <div className="flex flex-col items-center">
-            <h1 className={`${darkMode ? "text-white" : ""}`}>
-              BE Computer Science & Engineering
-            </h1>
-
-            <div className="flex flex-col mt-5">
-              <div className="flex justify-center">
-                <span className={`${darkMode ? "text-white" : ""}`}>
-                  Relevant course work
-                </span>
-              </div>
-
-              <div className="flex flex-wrap gap-3 p-5">
-                {[
-                  "Data Structures & Algorithms",
-                  "Java",
-                  "Operating System",
-                  "DBMS",
-                  "Computer Networks",
-                ].map((course, index) => (
-                  <p
-                    key={index}
-                    className={`border-black border rounded-md p-2 ${
-                      darkMode
-                        ? "bg-white text-black"
-                        : "bg-slate-950 text-white"
-                    }`}
-                  >
-                    {course}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
+          <ul className="list-disc list-inside space-y-3 text-sm md:text-base leading-relaxed">
+            <li
+              style={{
+                color: darkMode ? "#C0C0C0" : "#374151",
+              }}
+            >
+              Led the development of scalable Gen AI products and LLM-based
+              solutions, ensuring responsive web applications with RxJS and
+              Next.js.
+            </li>
+            <li
+              style={{
+                color: darkMode ? "#C0C0C0" : "#374151",
+              }}
+            >
+              Built REST APIs for AI-generated content delivery and integrated
+              MathJax/Markdown for LaTeX rendering on the frontend.
+            </li>
+            <li
+              style={{
+                color: darkMode ? "#C0C0C0" : "#374151",
+              }}
+            >
+              Developed authentication with mobile OTP verification and
+              integrated Razorpay for secure payments.
+            </li>
+            <li
+              style={{
+                color: darkMode ? "#C0C0C0" : "#374151",
+              }}
+            >
+              Automated WhatsApp messaging using backend integrations, and
+              deployed an AI-powered Sales Bot with Twilio.
+            </li>
+            <li
+              style={{
+                color: darkMode ? "#C0C0C0" : "#374151",
+              }}
+            >
+              Streamlined CI/CD pipelines with Docker and Azure for efficient
+              and consistent deployments.
+            </li>
+          </ul>
         </div>
-
-        {/* Empty flex div (optional) */}
-        <div className="flex"></div>
       </div>
     </section>
   );
