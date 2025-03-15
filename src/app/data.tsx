@@ -4,23 +4,23 @@ const resume_data = {
             title: 'Frontend',
             skills: [
                 {
-                    img_url: 'react.png',
+                    img_url: '/react.png',
                     title: 'Reactjs'
                 },
                 {
-                    img_url: 'angular.png',
+                    img_url: '/angular.png',
                     title: 'Angular'
                 },
                 {
-                    img_url: 'nextjs.png',
+                    img_url: '/nextjs.png',
                     title: 'Nextjs'
                 },
                 {
-                    img_url: 'redux.png',
+                    img_url: '/redux.png',
                     title: 'Redux Toolkit'
                 },
                 {
-                    img_url: 'tailwind.png',
+                    img_url: '/tailwind.png',
                     title: 'Tailwind CSS'
                 }
             ]
@@ -29,15 +29,15 @@ const resume_data = {
             title: 'Backend',
             skills: [
                 {
-                    img_url: 'nodejs.png',
+                    img_url: '/nodejs.png',
                     title: 'Nodejs'
                 },
                 {
-                    img_url: 'mongo.png',
+                    img_url: '/mongo.png',
                     title: 'MongoDB'
                 },
                 {
-                    img_url: 'expressjs.png',
+                    img_url: '/expressjs.png',
                     title: 'Expressjs'
                 }
             ]
@@ -46,19 +46,19 @@ const resume_data = {
             title: 'Tools',
             skills: [
                 {
-                    img_url: 'docker.png',
+                    img_url: '/docker.png',
                     title: 'Docker'
                 },
                 {
-                    img_url: 'postman.png',
+                    img_url: '/postman.png',
                     title: 'Postman'
                 },
                 {
-                    img_url: 'git.png',
+                    img_url: '/git.png',
                     title: 'Git'
                 },
                 {
-                    img_url: 'vscode.png',
+                    img_url: '/vscode.png',
                     title: 'VS Code'
                 }
             ]
@@ -67,11 +67,11 @@ const resume_data = {
             title: 'Cloud',
             skills: [
                 {
-                    img_url: 'azure.png',
+                    img_url: '/azure.png',
                     title: 'Azure'
                 },
                 {
-                    img_url: 'firebase.png',
+                    img_url: '/firebase.png',
                     title: 'Firebase'
                 }
             ]
@@ -80,19 +80,19 @@ const resume_data = {
             title: 'Languages',
             skills: [
                 {
-                    img_url: 'java.png',
+                    img_url: '/java.png',
                     title: 'Java'
                 },
                 {
-                    img_url: 'javascript.png',
+                    img_url: '/javascript.png',
                     title: 'Javascript'
                 },
                 {
-                    img_url: 'typescript.png',
+                    img_url: '/typescript.png',
                     title: 'Typescript'
                 },
                 {
-                    img_url: 'python.png',
+                    img_url: '/python.png',
                     title: 'Python'
                 }
             ]
@@ -100,13 +100,13 @@ const resume_data = {
     ],
     projects: [
         {
-            img_url: ['pragyan_4.png', 'pragyan_1.png', 'pragyan_2.png', 'pragyan_3.png', ],
+            img_url: ['/pragyan_4.png', '/pragyan_1.png', '/pragyan_2.png', '/pragyan_3.png', ],
             title: 'Pragyan AI',
             tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
             link: 'https://competition.pragyan.humanli.ai/login'
         },
         {
-            img_url: ['dod_2.png', 'dod_1.png', 'dod_3.png', ],
+            img_url: ['/dod_2.png', '/dod_1.png', '/dod_3.png', ],
             title: 'Data on Demand',
             tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
             link: 'https://dod.humanli.ai/login'

@@ -2,28 +2,15 @@
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 export default function Home() {
-  const [dark, setDark] = useState<boolean | null>(null);
-  useEffect(() => {
-    const storedDarkMode = localStorage.getItem('darkMode');
-    const isDark = storedDarkMode ? JSON.parse(storedDarkMode) : true;
-    setDark(isDark);
-  }, []);
-
+  const [dark, setDark] = useState(true);
   const toggleDark = () => {
-    if (dark === null) return; 
-    const newDark = !dark;
-    setDark(newDark);
-    localStorage.setItem('darkMode', JSON.stringify(newDark));
+    setDark(!dark);
   };
-  if (dark === null) {
-    return null;
-  }
   return (
     <div
       className="flex flex-col gap-5 transition-colors duration-300"

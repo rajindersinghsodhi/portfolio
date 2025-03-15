@@ -1,5 +1,6 @@
 import React from 'react';
 import resume_data from '../data';
+import Image from "next/image";
 import { ArrowUpRight } from 'lucide-react';
 import {
   Carousel,
@@ -38,11 +39,15 @@ const Projects = ({ darkMode }: { darkMode: boolean }) => {
                       key={imgIndex}
                       className="flex-shrink-0 w-full"
                     >
-                      <img
-                        src={img}
-                        alt={`Project ${projectIndex + 1} Image ${imgIndex + 1}`}
-                        className="w-full"
-                      />
+                      <Image
+  src={img}
+  alt={`Project ${projectIndex + 1} Image ${imgIndex + 1}`}
+  width={500} // Arbitrary number, won't change your Tailwind style
+  height={300}
+  className="w-full object-cover rounded"
+/>
+
+
                     </CarouselItem>
                   ))}
                 </CarouselContent>

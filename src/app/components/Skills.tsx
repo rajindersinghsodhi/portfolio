@@ -1,5 +1,6 @@
 import React from "react";
 import resume_data from "../data";
+import Image from "next/image";
 import {
   Carousel,
   CarouselContent,
@@ -75,11 +76,14 @@ const Skills = ({ darkMode }: { darkMode: boolean }) => {
                         }}
                       >
                         <div className="h-8 w-8 flex justify-center items-center">
-                          <img
-                            src={skill.img_url}
-                            alt={skill.title}
-                            className="h-8 w-8 object-contain rounded"
-                          />
+                        <Image
+  src={skill.img_url}
+  alt={skill.title}
+  width={32}
+  height={32} 
+  className="h-8 w-8 object-contain rounded"
+/>
+
                         </div>
                         <span
                           className="text-sm font-medium text-center"
