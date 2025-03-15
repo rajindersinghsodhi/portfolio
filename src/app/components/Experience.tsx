@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import resume_data from "../data";
 
 const Experience = ({ darkMode }: { darkMode: boolean }) => {

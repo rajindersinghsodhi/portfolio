@@ -23,19 +23,19 @@ const Intro = ({ darkMode }: { darkMode: boolean }) => {
       >
         {/* Image Container */}
         <div className="flex justify-center">
-          <img
-            src="/profile.jpeg"
-            alt="Rajinder Singh Sodhi"
-            className={`rounded-full h-40 w-40 md:h-60 md:w-60 transition-all duration-300 ${
-              darkMode
-                ? "border-4"
-                : "border-2"
-            }`}
-            style={{
-              borderColor: darkMode ? "#F5F5F5" : "#121212",  // Border toggle
-            }}
-            id="logo"
-          />
+        <Image
+  src="/profile.jpeg"
+  alt="Rajinder Singh Sodhi"
+  width={240} // equivalent to w-60 (60 * 4px = 240px)
+  height={240} // equivalent to h-60
+  className={`rounded-full h-40 w-40 md:h-60 md:w-60 transition-all duration-300 ${
+    darkMode ? "border-4" : "border-2"
+  }`}
+  style={{
+    borderColor: darkMode ? "#F5F5F5" : "#121212",
+  }}
+  id="logo"
+/>
         </div>
 
         {/* Text Content */}
