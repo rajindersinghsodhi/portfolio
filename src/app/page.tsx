@@ -2,13 +2,13 @@
 import Intro from "./components/Intro";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const toggleDark = () => {
     setDark(!dark);
   }
@@ -93,7 +93,7 @@ export default function Home() {
         <Experience darkMode={dark}/>
         <Projects darkMode={dark}/>
         <Contact darkMode={dark}/>
-        </div>s
+        </div>
     </div>
   );
 }

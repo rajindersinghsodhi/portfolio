@@ -41,7 +41,9 @@ const Contact = ({ darkMode }: { darkMode: boolean }) => {
           }}
         >
           {/* Email */}
-          <div className="flex items-center gap-3">
+          <div className="flex">
+            <a  className="flex items-center gap-3"
+    href="mailto:rajindersodhi181@gmail.com">
             <Image
               src={!darkMode ? "/email-icon.png" : "/dark-email-icon.png"}
               alt="Email Icon"
@@ -56,10 +58,12 @@ const Contact = ({ darkMode }: { darkMode: boolean }) => {
             >
               rajindersodhi181&#64;gmail.com
             </span>
+            </a>
           </div>
 
           {/* LinkedIn */}
-          <div className="flex items-center gap-3">
+          <div className="flex">
+            <a href="https://www.linkedin.com/in/rajindersinghsodhi/" target="_blank" className="flex items-center gap-3">
             <Image
               src={
                 !darkMode ? "/linkedin-icon.png" : "/dark-linkedin-icon.png"
@@ -76,6 +80,7 @@ const Contact = ({ darkMode }: { darkMode: boolean }) => {
             >
               rajindersinghsodhi
             </span>
+            </a>
           </div>
         </div>
       </div>
