@@ -8,6 +8,7 @@ export const TypewriterEffect = ({
   words,
   className,
   cursorClassName,
+  darkMode
 }: {
   words: {
     text: string;
@@ -15,6 +16,7 @@ export const TypewriterEffect = ({
   }[];
   className?: string;
   cursorClassName?: string;
+  darkMode: boolean;
 }) => {
   // split text inside of words into array of characters
   const wordsArray = words.map((word) => {
@@ -55,7 +57,7 @@ export const TypewriterEffect = ({
                   initial={{}}
                   key={`char-${index}`}
                   className={cn(
-                    `dark:text-white text-black opacity-0 hidden`,
+                    `opacity-0 hidden ${darkMode ? 'text-white' : 'text-white'}`,
                     word.className
                   )}
                 >

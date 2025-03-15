@@ -8,18 +8,30 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const darkMode = false
+  const darkMode = true;
+
   return (
-    <div className={`flex flex-col gap-5 ${darkMode ? "bg-black" : ""}`}>
+    <div
+      className="flex flex-col gap-5 transition-colors duration-300"
+      style={{
+        backgroundColor: darkMode ? "#121212" : "#FFFFFF",
+        color: darkMode ? "#F5F5F5" : "#121212",
+      }}
+    >
+      {/* Header */}
       <div className="w-full flex justify-between items-center p-5">
-      <div
-          className={`border-2 p-1 rounded-full cursor-pointer p-2 ${
-            darkMode ? 'border-neutral-50' : 'border-black'
+        
+        {/* Dark/Light Toggle Icon */}
+        <div
+          className={`border-2 rounded-full cursor-pointer p-2 transition-all duration-300 ${
+            darkMode
+              ? 'border-[#F5F5F5] bg-[#1A1A1A] text-[#F5F5F5]'
+              : 'border-[#121212] bg-[#FFFFFF] text-[#121212]'
           }`}
           // onClick={toggleMode}
         >
           {darkMode ? (
-            // Dark Mode Icon
+            // Dark Mode Icon (Moon)
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="white"
@@ -37,7 +49,7 @@ export default function Home() {
               />
             </svg>
           ) : (
-            // Light Mode Icon
+            // Light Mode Icon (Sun)
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -58,16 +70,20 @@ export default function Home() {
             </svg>
           )}
         </div>
+
+        {/* Contact Me Button */}
         <div className="flex">
-        <a
-          href="#contact"
-          className={`focus:outline-none font-medium rounded-full text-sm px-5 py-3 ${
-            darkMode ? 'bg-white text-black' : 'text-white bg-black'
-          }`}
-        >
-          Contact Me
-        </a>
-      </div>
+          <a
+            href="#contact"
+            className={`focus:outline-none font-medium rounded-full text-sm px-5 py-3 transition-all duration-300 ${
+              darkMode
+                ? 'bg-[#F5F5F5] text-[#121212] hover:bg-[#E0E0E0]'
+                : 'bg-[#121212] text-[#FFFFFF] hover:bg-[#1A1A1A]'
+            }`}
+          >
+            Contact Me
+          </a>
+        </div>
       </div>
     </div>
   );

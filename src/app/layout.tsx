@@ -27,18 +27,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const dark = true
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{
+          backgroundColor: dark ? "#121212" : "#FFFFFF",}}
       >
         {children}
         <div className="flex flex-col gap-20">
-        <Intro/>
-        <Skills/>
-        <Experience/>
-        <Projects/>
-        <Contact/>
+        <Intro darkMode={dark}/>
+        <Skills darkMode={dark}/>
+        <Experience darkMode={dark}/>
+        <Projects darkMode={dark}/>
+        <Contact darkMode={dark}/>
         </div>
       </body>
     </html>

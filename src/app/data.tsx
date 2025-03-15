@@ -106,7 +106,7 @@ const resume_data = {
             link: 'https://competition.pragyan.humanli.ai/login'
         },
         {
-            img_url: ['dod_4.png', 'dod_1.png', 'dod_2.png', 'dod_3.png', ],
+            img_url: ['dod_2.png', 'dod_1.png', 'dod_3.png', ],
             title: 'Data on Demand',
             tech_stack: ['Angular', 'Flask', 'Firebase', 'Azure'],
             link: 'https://dod.humanli.ai/login'
