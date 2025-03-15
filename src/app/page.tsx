@@ -8,9 +8,21 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState<boolean | null>(null);
+  useEffect(() => {
+    const storedDarkMode = localStorage.getItem('darkMode');
+    const isDark = storedDarkMode ? JSON.parse(storedDarkMode) : true;
+    setDark(isDark);
+  }, []);
+
   const toggleDark = () => {
-    setDark(!dark);
+    if (dark === null) return; 
+    const newDark = !dark;
+    setDark(newDark);
+    localStorage.setItem('darkMode', JSON.stringify(newDark));
+  };
+  if (dark === null) {
+    return null;
   }
   return (
     <div
