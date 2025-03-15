@@ -8,14 +8,16 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const darkMode = true;
-
+  const [dark, setDark] = useState(false);
+  const toggleDark = () => {
+    setDark(!dark);
+  }
   return (
     <div
       className="flex flex-col gap-5 transition-colors duration-300"
       style={{
-        backgroundColor: darkMode ? "#121212" : "#FFFFFF",
-        color: darkMode ? "#F5F5F5" : "#121212",
+        backgroundColor: dark ? "#121212" : "#FFFFFF",
+        color: dark ? "#F5F5F5" : "#121212",
       }}
     >
       {/* Header */}
@@ -24,13 +26,13 @@ export default function Home() {
         {/* Dark/Light Toggle Icon */}
         <div
           className={`border-2 rounded-full cursor-pointer p-2 transition-all duration-300 ${
-            darkMode
+            dark
               ? 'border-[#F5F5F5] bg-[#1A1A1A] text-[#F5F5F5]'
               : 'border-[#121212] bg-[#FFFFFF] text-[#121212]'
           }`}
-          // onClick={toggleMode}
+          onClick={toggleDark}
         >
-          {darkMode ? (
+          {dark ? (
             // Dark Mode Icon (Moon)
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +78,7 @@ export default function Home() {
           <a
             href="#contact"
             className={`focus:outline-none font-medium rounded-full text-sm px-5 py-3 transition-all duration-300 ${
-              darkMode
+              dark
                 ? 'bg-[#F5F5F5] text-[#121212] hover:bg-[#E0E0E0]'
                 : 'bg-[#121212] text-[#FFFFFF] hover:bg-[#1A1A1A]'
             }`}
@@ -85,6 +87,13 @@ export default function Home() {
           </a>
         </div>
       </div>
+      <div className="flex flex-col gap-20">
+        <Intro darkMode={dark}/>
+        <Skills darkMode={dark}/>
+        <Experience darkMode={dark}/>
+        <Projects darkMode={dark}/>
+        <Contact darkMode={dark}/>
+        </div>s
     </div>
   );
 }

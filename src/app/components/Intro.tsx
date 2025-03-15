@@ -14,7 +14,7 @@ const Intro = ({ darkMode }: { darkMode: boolean }) => {
       className={`flex flex-col items-center justify-center transition-colors duration-300`}
       style={{
         height: "80vh",
-        backgroundColor: darkMode ? "#121212" : "#F5F5F5",  // Dark BG / Light BG
+        backgroundColor: darkMode ? "#121212" : "#FFFFFF",  // Dark BG / Light BG
         color: darkMode ? "#F5F5F5" : "#121212"             // Text color toggle
       }}
     >
@@ -72,7 +72,7 @@ const Intro = ({ darkMode }: { darkMode: boolean }) => {
               download
               className={`focus:outline-none font-medium rounded-full text-sm px-5 me-2 mb-2 py-3 transition-colors duration-300`}
               style={{
-                backgroundColor: darkMode ? "#F5F5F5" : "#6366F1",
+                backgroundColor: darkMode ? "#F5F5F5" : "black",
                 color: darkMode ? "#121212" : "#FFFFFF",
               }}
             >
