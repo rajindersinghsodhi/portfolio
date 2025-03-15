@@ -22,7 +22,7 @@ const Projects = ({ darkMode }: { darkMode: boolean }) => {
         <span className='text-3xl md:text-4xl font-bold'>Projects</span>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center gap-5 p-5 w-9/12 md:w-11/12">
+      <div className="flex flex-col md:flex-row justify-center gap-5 p-5 w-11/12">
         {resume_data.projects.map((project, projectIndex) => (
           <div
             key={projectIndex}
@@ -30,7 +30,7 @@ const Projects = ({ darkMode }: { darkMode: boolean }) => {
               darkMode ? 'bg-[#121212] border-[#2C2C2C]' : 'bg-white border-[#E5E7EB]'
             }`}
           >
-            <div className="relative overflow-hidden border-b rounded-t-xl">
+            <div className="relative overflow-hidden rounded-t-xl">
               <Carousel>
                 <CarouselContent className="flex">
                   {project.img_url.map((img, imgIndex) => (
@@ -41,7 +41,7 @@ const Projects = ({ darkMode }: { darkMode: boolean }) => {
                       <img
                         src={img}
                         alt={`Project ${projectIndex + 1} Image ${imgIndex + 1}`}
-                        className="rounded-xl object-contain w-full"
+                        className="w-full"
                       />
                     </CarouselItem>
                   ))}
@@ -70,7 +70,7 @@ const Projects = ({ darkMode }: { darkMode: boolean }) => {
                   {project.title}
                 </span>
 
-                <div className="flex justify-center items-center gap-2 flex-wrap">
+                <div className="flex items-center gap-2 flex-wrap">
                   {project.tech_stack.map((tech, techIndex) => (
                     <span
                       key={techIndex}
